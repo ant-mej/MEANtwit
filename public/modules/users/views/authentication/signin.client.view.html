@@ -1,0 +1,48 @@
+<div class='bg-sign-in' data-ng-controller="AuthenticationController">
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-12'>
+                <div class='logo'></div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-lg-12'>
+                <h1>Welcome to MEAN Twit</h1>
+				<p align="center">This is a MEAN.JS Application that behaves similar to Twitter.
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-lg-12'>
+                <div class='login-in'>
+                    <form data-ng-submit="signin()" autocomplete="off">
+                        <div class='input'>
+
+                            <label>Username:</label>
+                            <input type='text' id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+                            <label>Password:</label>
+                            <input type='password' id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+                            <button type="submit" class='sign-in-btn'>Sign In</button>
+                            <hr>
+                            <button onclick="location='/auth/facebook';" class="btn btn-facebook fb-btn"><i class="fa fa-facebook"></i> | Sign In with Facebook</button>
+                            <!--button onclick="location='/auth/google';" class="btn btn-facebook google-btn"><i class="fa fa-google-plus"></i> | Sign In with Google + </button-->
+                            <span class='account'>Don't have an account yet? <a href="/#!/signup">Sign up.</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-lg-12'>
+                <!-- <div class='intro'>
+                <h2>How it Works</h2>
+                <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper non metus non vulputate. <br>
+                2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper non metus non vulputate. <br>
+                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper non metus non vulputate.</p>
+                </div>
+-->				</div>
+        </div>
+    </div>
+</div>
