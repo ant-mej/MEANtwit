@@ -14,33 +14,41 @@
         <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
             <div class='row'>
                 <div class='col-lg-12'>
-                    <div class='login-in'>
-
-                        <div class='input'>
-
+                    <div class='sign-up'>
+                        <div class='input-section-1'>
                             <label for="firstName">First Name</label>
-                            <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name">
-
-
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email">
-
+                            <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name" tabindex='1'>
 
                             <label for="username">Username</label>
-                            <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+                            <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username" tabindex='3'>
 
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email" tabindex='5'>
+                        </div>
+
+                        <div class='input-section-2'>
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name" tabindex='2'>
 
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+                            <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password" tabindex='4'>
 
-                            <button type="submit" class='sign-in-btn'>Sign Up</button>
-                            <hr>
-                            <button class="btn btn-facebook fb-btn"><i class="fa fa-facebook"></i> | Sign Up with Facebook</button>
-                            <!--button class="btn btn-facebook google-btn"><i class="fa fa-google-plus"></i> | Sign Up with Google + </button-->
-                            <span class='account'>Already have an account? <a href="/#!/signin">Sign In.</a></span>
+                            <button type="submit" class='sign-up-btn' tabindex='6'>Sign Up</button>
                         </div>
+
+                        <div class='clear'></div>
+
+                        <span><hr></span>
+
+                        <div class='input-section-3'>
+                            <button class="btn btn-facebook fb-btn" tabindex='7'><i class="fa fa-facebook"></i> | Sign Up with Facebook</button>
+                        </div>
+
+                        <div class='input-section-4'>
+                            <span class='account'>Already have an account? <a href="/#!/signin" tabindex='8'>Sign In.</a></span>
+                        </div>
+
+                        <div class='clear'></div>
                     </div>
                 </div>
             </div>
@@ -48,17 +56,8 @@
                 <strong data-ng-bind="error"></strong>
             </div>
         </form>
-        <div class='row'>
-            <div class='col-lg-12'>
-                <!-- <div class='intro'>
-                <h2>How it Works</h2>
-                <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper non metus non vulputate. <br>
-                2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper non metus non vulputate. <br>
-                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper non metus non vulputate.</p>
-                </div>
--->				</div>
-        </div>
-    </div>
+   
+    </div> <!-- END OF CONTAINER -->
 
 
 </div>
