@@ -1,21 +1,6 @@
-@media (min-width: 992px) {
-	.nav-users {
-		position: fixed;
-	}
-}
-.remove-account-container {
-	display: inline-block;
-	position: relative;
-}
-.btn-remove-account {
-	top: 10px;
-	right: 10px;
-	position: absolute;
-}
-
-
-
 /*********** HEADINGS ***********/
+
+
 
 h1 {
     color: #DEB841;
@@ -154,10 +139,18 @@ input[type='email'] {
     margin: 0 -15px;
 }
 
+.bg-learn-more {
+    height: 100%;
+    background: url(../img/bg-6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    margin: 0 -15px;
+}
 
 
 
-/*********** SIGN IN & SIGN UP ***********/
+/*********** SIGN IN, SIGN UP & LEARN MORE ***********/
 
 .login {
     height: 100%;
@@ -187,6 +180,26 @@ hr {
     background-color: #DE9E36;
 }
 
+.learn-more-btn {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.learn-more-btn a {
+    color: #DE9E36;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #DE9E36;
+}
+
+.learn-more-btn a:hover, .learn-more-btn a:active, .learn-more-btn a:focus {
+    color: #DE9E36;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 
 
@@ -229,7 +242,6 @@ hr {
 }
 
 span hr {
-    border-color: #6D6A75;
     display: block;
     margin: 0 30px 0 20px;
 }
@@ -246,6 +258,61 @@ label {
     border: none;
     border-radius: 5px;
     background-color: #DE9E36;
+    margin-top: 20px;
+}
+
+
+
+.learn-more {
+    height: 100%;
+    width: 87%;
+    margin-top: 23px;
+    background-color: rgba(55,50,62,0.65);
+    border-radius: 10px;
+}
+
+.learn-more-content {
+    padding: 35px 30px;
+}
+
+.learn-more-content p {
+    color: #fff;
+    font-size: 18px;
+}
+
+.steps {
+    color: #DE9E36;
+    font-size: 22px;
+}
+
+.screenshots {
+    height: 100%;
+    width: 83%;
+    margin-top: 23px;
+    margin-left: 75px;
+}
+
+.screenshots-content img {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.other-sign-up-btn {
+    width: 30%;
+    height: 35px;
+    display: block;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: #DE9E36;
+    margin: 20px auto 0;
+}
+
+.learn-more-content a {
+    text-decoration: none;
+}
+
+.learn-more-content span {
     margin-top: 20px;
 }
 
@@ -390,13 +457,6 @@ label {
 .account a, .account a:hover, .account a:visited {
     color: #DE9E36;
 }
-
-
-
-
-
-
-
 
 
 
