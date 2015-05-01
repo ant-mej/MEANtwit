@@ -5,8 +5,9 @@
 var init = require('./config/init')(),
 	config = require('./config/config'),
 	mongoose = require('mongoose'),
-	chalk = require('chalk');
-
+    fs = require('fs'),
+	chalk = require('chalk'),
+    Buffer =    require('buffer');
 /**
  * Main application entry file.
  * Please note that the order of loading is important.
@@ -27,7 +28,8 @@ var app = require('./config/express')(db);
 require('./config/passport')();
 
 // Start the app by listening on <port>
-app.listen(config.port);
+//app.listen(config.port);
+app.get('server').listen(config.port);
 
 // Expose app
 var exports = module.exports = app;

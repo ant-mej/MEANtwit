@@ -5,17 +5,16 @@
  */
 var users = require('../../app/controllers/users.server.controller'),
 	articles = require('../../app/controllers/articles.server.controller');
-
+var image_route = require('../../app/controllers/file-upload.server.controller');
+var Buffer =    require('buffer/').Buffer;
+var path = require('path');
 module.exports = function(app) {
 	// Article Routes
-
+    app.route('/uploadfile').post(users.requiresLogin, articles.uploadFiles);
     	app.route('/articles')
-		.get(articles.list)
+		.get(articles.list,Buffer)
 		.post(users.requiresLogin, articles.create);
 
-	app.route('/articles')
-		.get(articles.list)
-		.post(users.requiresLogin, articles.create);
 
 	app.route('/articles/:articleId')
 		.get(articles.read)

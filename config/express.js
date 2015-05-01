@@ -7,12 +7,15 @@ var fs = require('fs'),
 	http = require('http'),
 	https = require('https'),
 	express = require('express'),
+    http = require('http'),
+    socketio = require('socket.io'),
 	morgan = require('morgan'),
 	bodyParser = require('body-parser'),
 	session = require('express-session'),
 	compress = require('compression'),
 	methodOverride = require('method-override'),
 	cookieParser = require('cookie-parser'),
+
 	helmet = require('helmet'),
 	passport = require('passport'),
 	mongoStore = require('connect-mongo')({
@@ -21,6 +24,7 @@ var fs = require('fs'),
 	flash = require('connect-flash'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
+    busboyBodyParser = require('busboy-body-parser'),
 	path = require('path');
 
 module.exports = function(db) {
@@ -31,7 +35,7 @@ module.exports = function(db) {
 	config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
 		require(path.resolve(modelPath));
 	});
-
+    app.use(busboyBodyParser());
 	// Setting application local variables
 	app.locals.title = config.app.title;
 	app.locals.description = config.app.description;
@@ -157,7 +161,11 @@ module.exports = function(db) {
 		// Return HTTPS server instance
 		return httpsServer;
 	}
-
+    var server = http.createServer(app);
+    var io = socketio.listen(server);
+    app.set('socketio', io);
+    app.set('server', server);
+    app.set('fs', fs);
 	// Return Express server instance
 	return app;
 };

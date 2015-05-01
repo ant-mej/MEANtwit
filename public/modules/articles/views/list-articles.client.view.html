@@ -3,37 +3,65 @@
 <div class='container' data-ng-controller="ArticlesController" data-ng-init="find()"  style="margin-top: 60px;">
     <div class='row'>
         <div class='col-lg-12'>
-
             <div class='user'>
-                <img src='/modules/users/img/profile-image.gif' alt='user profile image'>
-                <form name="articleForm" class="form-horizontal" style="display: inline;" data-ng-submit="create()" novalidate>
-                <div class='user-input'>
-                    <textarea name="content" data-ng-model="content" id="content" class="form-control ng-pristine ng-valid" cols="30" rows="10" placeholder="Content"></textarea><br>
-                    <button type="submit">Post</button>
-                </div>
-                    </form>
-            </div>
 
+                <div style="display: inline-block;" ng-app="reusableThings">
+                    <div  ng-hide="image" class="dropzone dropbox" file-dropzone="[image/png, image/jpeg, image/gif]"
+                          file="image" file-name="imageFileName" data-max-file-size="3">
+                        <span>Drop Image Here</span>
+                    </div>
+                    <div class="image-container" ng-show="image">
+                        <img style="width: 240px;height: 240px;" ng-src={{image}} />
+
+                    </div>
+                </div>
+
+                <form name="articleForm" class="form-horizontal" style="display: inline;" data-ng-submit="create()" novalidate>
+                    <div class='user-input'>
+                        <textarea name="content" data-ng-model="content" id="content" class="form-control ng-pristine ng-valid" cols="30" rows="10" placeholder="Content"></textarea><br>
+                        <button type="submit">Post</button>
+                    </div>
+                </form>
+            </div>
             <div class='user-info' >
+                <span id="image_name" style="display: none;" data-ng-bind="authentication.user.username"></span>
                 <span class='username' data-ng-bind="authentication.user.displayName"></span>
                 <span class='num-posts' ><i data-ng-bind="articles.length"></i> Posts</span>
-                <span class='num-followers'>0 Followers</span>
+                <!-- <span class='num-followers'>0 Followers</span> -->
             </div>
-
         </div>
     </div>
+   <div class='row' >
+        <div class="col-md-12">
+            <!--Sidebar content-->
+            <div class="col-md-2" style="float: left;margin-left: 14%;">
 
-    <div class='row' >
+                <input placeholder="Search Post" ng-model="query">
+            </div>
+            <div class="col-md-2" style="float: right;width: 18.666667%;margin-right: 13%;">
+
+                <select ng-model="orderProp">
+                    <option value="content">Alphabetical</option>
+                    <option value="created">Age</option>
+                </select>
+                <button ng-click="asc = false">Asc</button>
+                <button ng-click="asc = true">Desc</button>
+            </div>
+            <br />
+           
+        </div>
+        </div>
+		 <div class='row' >
         <div class='col-lg-12'>
             <div class='user-posts'>
-                <ul>
-                    <li style="width: 100%;"  data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}">
-					   <p  data-ng-bind="article.content"></p>
-							<span class='date-time'>
-								<span class='date' data-ng-bind="article.created | date:'MM/dd/yyyy'"></span>
-								<span class='time' data-ng-bind="article.created | date:'H:mma'"></span>
-                                <span data-ng-bind="article.user.displayName"></span>
-							</span>
+                <ul  >
+                    <li style="width: 100%;"  data-ng-repeat="article in articles  | filter:query | filter:search | orderBy:orderProp:asc" data-ng-href="#!/articles/{{article._id}}">
+                        <p  data-ng-bind="article.content"></p>
+											<span class='date-time'>
+									<span class='date' data-ng-bind="article.created | date:'MM/dd/yyyy'"></span>
+									<span class='time' data-ng-bind="article.created | date:'H:mma'"></span>
+                                    <span data-ng-bind="article.user.displayName"></span>
+								</span>
                     </li>
 
                 </ul>

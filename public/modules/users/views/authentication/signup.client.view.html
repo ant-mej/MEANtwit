@@ -1,63 +1,57 @@
-<div class='bg-sign-up' data-ng-controller="AuthenticationController">
-    <div class='container'>
-        <div class='row'>
-            <div class='col-lg-12'>
-                <div class='logo'></div>
-            </div>
-        </div>
 
-        <div class='row'>
-            <div class='col-lg-12'>
-                <h1>Sign Up Today</h1>
-            </div>
-        </div>
-        <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <div class='sign-up'>
-                        <div class='input-section-1'>
-                            <label for="firstName">First Name:</label>
-                            <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name" tabindex='1'>
+<div class='bg-sign-up'  data-ng-controller="AuthenticationController">
+		<div class='container'>
+			<div class='row'>
+				<div class='col-lg-12'>
+					<div class='logo'></div>
+				</div>
+			</div>
 
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username" tabindex='3'>
+			<div class='row'>
+				<div class='col-lg-12'>
+					<h1>Sign Up Today</h1>
+				</div>
+			</div>
+	    <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
 
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email" tabindex='5'>
-                        </div>
+			<div class='row'>
+				<div class='col-lg-12'>
+					<div class='sign-up'>
+						<div class='input-section-1'>
+							<label>First Name:</label>
+							<input type='text' required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name" tabindex='1'>
+							<label>Username:</label>
+							<input type='text' tabindex='3' id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+							<label>Email:</label>
+							<input  tabindex='5' type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email"  />
+						</div>
 
-                        <div class='input-section-2'>
-                            <label for="lastName">Last Name:</label>
-                            <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name" tabindex='2'>
+						<div class='input-section-2'>
+							<label>Last Name:</label>
+							<input type='text' tabindex='2' id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name">
+							<label>Password:</label>
+							<input type='password' tabindex='4' id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+							<button type="submit" class='sign-up-btn' tabindex='6'>Sign Up</button>
+						</div>
 
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password" tabindex='4'>
+						<div class='clear'></div>
 
-                            <button type="submit" class='sign-up-btn' tabindex='6'>Sign Up</button>
-                        </div>
+						<span><hr></span>
 
-                        <div class='clear'></div>
+						<div class='input-section-3'>
+							<button onclick="location='/auth/facebook';" class="btn btn-facebook fb-btn" tabindex='7'><i class="fa fa-facebook"></i> | Sign Up with Facebook</button>
+						</div>
 
-                        <span><hr></span>
+						<div class='input-section-4'>
+							<span class='account'>Already have an account? <a href="/#!/signin" tabindex='8'>Sign in.</a></span>
+						</div>
 
-                        <div class='input-section-3'>
-                            <button class="btn btn-facebook fb-btn" tabindex='7'><i class="fa fa-facebook"></i> | Sign Up with Facebook</button>
-                        </div>
+						<div class='clear'></div>
 
-                        <div class='input-section-4'>
-                            <span class='account'>Already have an account? <a href="/#!/signin" tabindex='8'>Sign In.</a></span>
-                        </div>
+					</div>
+				</div>
+			</div>
+             </form>
+		</div> <!-- END OF CONTAINER -->
 
-                        <div class='clear'></div>
-                    </div>
-                </div>
-            </div>
-            <div data-ng-show="error" class="text-center text-danger">
-                <strong data-ng-bind="error"></strong>
-            </div>
-        </form>
-   
-    </div> <!-- END OF CONTAINER -->
-
-
-</div>
+	</div>

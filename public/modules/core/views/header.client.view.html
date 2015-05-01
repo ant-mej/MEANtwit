@@ -1,4 +1,21 @@
+<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+    .dropzone {
+        min-height: 150px;
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        background: white;
+        padding: 31px 17px;
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 200px;
+        width: 200px;
+    }
+
+
+</style>
 <div  data-ng-controller="HeaderController">
 
 		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
@@ -25,7 +42,7 @@
                     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                         <ul class='nav navbar-nav'>
                             <li><a href='/'><i class="fa fa-home"></i></a></li>
-                            <li><input type='search' placeholder="Search"></li>
+                            <!-- <li><input type='search' value='Search'></li> -->
                             <li><a href="/auth/signout"><i class="fa fa-sign-out"></i></a></li>
                         </ul>
                     </div>

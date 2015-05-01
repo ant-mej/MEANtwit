@@ -5,22 +5,26 @@
  */
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
+    multer = require('multer'),
 	Article = mongoose.model('Article'),
-	_ = require('lodash');
-
+    fs = require('fs'),
+	_ = require('lodash'),
+    Buffer =    require('buffer/').Buffer;
+    var path = require('path');
 /**
  * Create a article
  */
 exports.create = function(req, res) {
 	var article = new Article(req.body);
-	article.user = req.user;
-
-	article.save(function(err) {
+	    article.user = req.user;
+        article.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+            var socketio = req.app.get('socketio'); // tacke out socket instance from the app container
+            socketio.sockets.emit('article.created', article); // emit an event for all connected clients
 			res.json(article);
 		}
 	});
@@ -83,7 +87,40 @@ exports.list = function(req, res) {
 		}
 	});
 };
+exports.uploadFiles = function(req,res)
+{
+    var venue = req;
+    var fullUrl = req.protocol + '://' + req.get('host') ;
+    var dateObject = new Date();
+    var uniqueId = dateObject.getFullYear() + '' + dateObject.getMonth() + '' +dateObject.getDate() + '' +dateObject.getTime();
+    var _filepath = path.resolve('uploads/');//path.resolve('public/uploads/', 'uploads');
 
+
+    function decodeBase64Image(dataString) { //console.log();
+        var matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
+            response = {};
+
+        if (matches.length !== 3) {
+            return new Error('Invalid input string');
+        }
+        response.type = matches[1];
+        response.data = new Buffer(matches[2], 'base64');
+        return response;
+    }
+
+    var imgName = uniqueId + '.jpeg';
+    var _newPath = _filepath + '/' +imgName;
+    var dbPath = fullUrl + '/uploads/' + imgName;
+    var imageContent = decodeBase64Image(venue.image);
+    venue.image = dbPath;
+    fs.writeFile(_newPath, imageContent.data, function(err) {
+        if (err) {
+            console.log('Error comes');
+        }
+    });
+    console.log(req.body);
+console.log(req);
+}
 /**
  * Article middleware
  */
