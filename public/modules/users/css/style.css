@@ -107,7 +107,7 @@ input[type='password'] {
 
 input[type='email'] {
 	float: left;
-    width: 63%;
+    width: 72%;
     height: 35px;
     color: #fff;
     font-size: 1.250em;
@@ -260,7 +260,7 @@ label {
 }
 
 .sign-up-btn {
-	width: 30%;
+	width: 21%;
 	height: 35px;
 	color: #fff;
 	border: none;
