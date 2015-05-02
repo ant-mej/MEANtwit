@@ -3,6 +3,8 @@
 
 
 h1 {
+	font-family: 'PT Sans Caption', sans-serif;
+	font-weight: 700;
 	color: #DEB841;
 	text-shadow: #484848 1px 1px;
 	font-size: 3.313em;
@@ -12,6 +14,7 @@ h1 {
 }
 
 h2 {
+	font-family: 'PT Sans Caption', sans-serif;
 	color: #DEB841;
 	font-size: 3.313em;
 	text-align: center;
@@ -84,6 +87,8 @@ h2 {
 input[type='text'] {
 	width: 100%;
 	height: 35px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 	color: #fff;
 	font-size: 1.250em;
 	background-color: rgba(191,189,193, .30);
@@ -96,6 +101,8 @@ input[type='text'] {
 input[type='password'] {
 	width: 100%;
 	height: 35px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 	color: #fff;
 	font-size: 1.250em;
 	background-color: rgba(191,189,193, .30);
@@ -109,6 +116,8 @@ input[type='email'] {
 	float: left;
     width: 72%;
     height: 35px;
+    font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
     color: #fff;
     font-size: 1.250em;
     background-color: rgba(191,189,193, .30);
@@ -175,6 +184,8 @@ hr {
 .sign-in-btn {
 	width: 100%;
 	height: 35px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
@@ -189,6 +200,8 @@ hr {
 
 .learn-more-btn a {
 	color: #DE9E36;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
 	font-size: 16px;
 	font-weight: bold;
 	padding-bottom: 5px;
@@ -196,6 +209,8 @@ hr {
 }
 
 .learn-more-btn a:hover, .learn-more-btn a:active, .learn-more-btn a:focus {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
 	color: #DE9E36;
 	font-size: 16px;
 	font-weight: bold;
@@ -255,6 +270,7 @@ span hr {
 }
 
 label {
+	font-family: 'Open Sans', sans-serif;
 	color: #DEB841;
 	font-size: 1.125em;
 }
@@ -262,6 +278,8 @@ label {
 .sign-up-btn {
 	width: 21%;
 	height: 35px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
@@ -313,6 +331,7 @@ label {
 	width: 30%;
 	height: 35px;
 	display: block;
+	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
@@ -368,6 +387,7 @@ label {
 }
 
 .user-input textarea {
+	font-family: 'Open Sans', sans-serif;
 	resize: none;
 	width: 100%;
 	height: 100px;
@@ -380,6 +400,7 @@ label {
 .user-input button {
 	float: right;
 	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 	background-color: #37323E;
 	border: none;
@@ -401,14 +422,17 @@ label {
 }
 
 .username {
+	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 }
 
 .num-posts {
+	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 }
 
 .num-followers {
+	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 }
 
@@ -424,6 +448,7 @@ label {
 }
 
 .user-posts li {
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	list-style: none;
 	display: inline-block;
@@ -454,6 +479,7 @@ label {
 .fb-btn, .fb-btn:hover, .fb-btn:visited, .fb-btn:active, .fb-btn:focus {
 	width: 100%;
 	height: 35px;
+	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
@@ -462,12 +488,14 @@ label {
 }
 
 .account {
+	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 	display: block;
 	text-align: center;
 }
 
 .account a, .account a:hover, .account a:visited {
+	font-family: 'Open Sans', sans-serif;
 	color: #DE9E36;
 }
 
