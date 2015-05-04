@@ -10,3 +10,5 @@ angular.module('casino-main', [
   };
   
 });
+
+//Casino Lights module for Angular. Module can be located here: http://ngmodules.org/modules/angular-casino-lights
